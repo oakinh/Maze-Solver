@@ -5,4 +5,7 @@ class Window:
         self.width = width
         self.height = height
         self.root = Tk()
-        self.root.title("Not sure lol")
+        self.root.title("My Awesome Window")
+        self.canvas = Canvas(self.root, width=self.width, height=self.height, bg="white")
+        self.canvas.pack(fill=BOTH, expand=True)
+        self.isrunning = False
