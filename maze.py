@@ -40,3 +40,13 @@ class Maze:
             return
         self.win.redraw()
         time.sleep(0.05)
+
+    def _break_entrance_and_exit(self):
+        last_column = len(self._cells) - 1
+        last_row = len(self._cells[-1]) - 1
+        entrance_cell = self._cells[0][0]
+        exit_cell = self._cells[last_column][last_row]
+        entrance_cell.has_top_wall = False
+        self._draw_cell(0, 0)
+        exit_cell.has_bottom_wall = False
+        self._draw_cell(last_column, last_row)
